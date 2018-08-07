@@ -15,7 +15,7 @@ public class Test14 {
             return null;
         }
 
-        List<ListNode> mynodelist=new ArrayList<>();
+        List<ListNode> mynodelist=new ArrayList<ListNode>();
         while (head!=null){
             mynodelist.add(head);
             head=head.next;

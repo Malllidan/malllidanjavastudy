@@ -10,7 +10,7 @@ import java.util.Collections;
 public class Test3 {
 
     public static void main(String...args){
-        ArrayList<Integer> mylist=new ArrayList<>(1);
+        ArrayList<Integer> mylist=new ArrayList<Integer>(1);
         System.out.println(mylist);
     }
 
@@ -18,7 +18,7 @@ public class Test3 {
 
 
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
-        ArrayList<Integer> mylist=new ArrayList<>(1);
+        ArrayList<Integer> mylist=new ArrayList<Integer>(1);
         ListNode mylistnode=listNode;
         if(mylistnode==null) return mylist;
         while (mylistnode!=null){

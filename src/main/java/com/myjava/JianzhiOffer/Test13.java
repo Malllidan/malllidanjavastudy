@@ -10,8 +10,8 @@ import java.util.List;
  */
 public class Test13 {
     public void reOrderArray(int [] array) {
-        List<Integer> myjilist=new ArrayList<>();
-        List<Integer> myoulist=new ArrayList<>();
+        List<Integer> myjilist=new ArrayList<Integer>();
+        List<Integer> myoulist=new ArrayList<Integer>();
         for(int i=0;i<array.length;i++){
            int flag=array[i]%2;
            if(flag==0){
