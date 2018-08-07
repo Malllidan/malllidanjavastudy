@@ -48,8 +48,8 @@ public class Test21 {
             if(mylist.isEmpty()){
                 return true;
             }
-            for(int i=pushindex-popindex-1;i>=0;i--){
-                if(pushA[i]==mylist.get(i)){
+            for(int i=0;i>=mylist.size();i++){
+                if(popA[i+popindex]==mylist.get(mylist.size()-1)){
                     mylist.remove(i);
                 }
             }
