@@ -48,15 +48,18 @@ public class Test21 {
             if(mylist.isEmpty()){
                 return true;
             }
-            for(int i=0;i>=mylist.size();i++){
+            for(int i=0;i< pushA.length-popindex;i++){
                 if(popA[i+popindex]==mylist.get(mylist.size()-1)){
-                    mylist.remove(i);
+                    mylist.remove(mylist.size()-1);
+                }
+                else{
+                    return false;
                 }
             }
-        if(mylist.isEmpty()){
+
             return true;
-        }
-        return false;
+
+
     }
 
 }
