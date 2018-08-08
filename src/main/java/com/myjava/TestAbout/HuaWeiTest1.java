@@ -1,8 +1,10 @@
-package com.myjava.wangyihuyu;
+package com.myjava.TestAbout;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class HuyuTest3 {
+public class HuaWeiTest1 {
     public static void main(String...args){
         Scanner in = new Scanner(System.in);
         int groudnum=in.nextInt();
