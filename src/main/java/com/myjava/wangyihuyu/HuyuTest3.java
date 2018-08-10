@@ -27,18 +27,46 @@ public class HuyuTest3 {
                 mywork[j]=myworkstr.charAt(j);
             }
             for(int xindex=0;xindex<lie;xindex++){
-                for(int yindex=0;yindex<hang;yindex++){
-                    int charindex=0;
-//                    if()
-                    for(int f=0;f<worklen;f++){//向右
-                        if(mywork[f]!=mycharlist[yindex][xindex+f]){
-                            break;
+                for(int yindex=0;yindex<hang;yindex++) {
+                    int charindex = 0;
+                    if (xindex<=lie-worklen) {//向右
+                        for (int f = 0; f < worklen; f++) {
+                            if (mywork[f] != mycharlist[yindex][xindex + f]) {
+                                break;
+                            }
+                            if(f==worklen-1){
+                                flag++;
+                            }
                         }
+
+                    }
+                    if (yindex<=hang-worklen) {//向下
+                        for (int f = 0; f < worklen; f++) {
+                            if (mywork[f] != mycharlist[yindex+f][xindex]) {
+                                break;
+                            }
+                            if(f==worklen-1){
+                                flag++;
+                            }
+                        }
+
+                    }
+                    if (yindex<=hang-worklen&&xindex<=lie-worklen) {//邪向下
+                        for (int f = 0; f < worklen; f++) {
+                            if (mywork[f] != mycharlist[yindex+f][xindex+f]) {
+                                break;
+                            }
+                            if(f==worklen-1){
+                                flag++;
+                            }
+                        }
+
                     }
 
                 }
 
             }
+            System.out.println(flag);
 
 
 
