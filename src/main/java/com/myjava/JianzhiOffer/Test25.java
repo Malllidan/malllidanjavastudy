@@ -9,23 +9,51 @@ import java.util.List;
  * 返回结果为复制后复杂链表的head。（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空）
  */
 public class Test25 {
-    public RandomListNode Clone(RandomListNode pHead)
+    public static void main(String...args){
+        RandomListNode a1=new RandomListNode(1);
+        RandomListNode a2=new RandomListNode(2);
+        RandomListNode a3=new RandomListNode(3);
+        a1.random=a3;
+        a1.next=a2;
+        a2.next=a3;
+        RandomListNode mynode=Clone(a1);
+        System.out.println(mynode);
+    }
+    public static RandomListNode Clone(RandomListNode pHead)
     {
-        List<RandomListNode> mylist=new ArrayList<RandomListNode>();
-        RandomListNode thisNode=new RandomListNode(pHead.label);
-        while (pHead!=null){
+      if(pHead==null){
+          return null;
+      }
+      RandomListNode top=pHead;//记录头
+      RandomListNode curNode;//复制的节点
+      RandomListNode temp;
+      while (pHead!=null){
+          temp=pHead.next;
+          curNode=new RandomListNode(pHead.label);
+          pHead.next=curNode;
+          curNode.next=temp;
+          pHead=temp;
+      }
+      pHead=top;
+      while (pHead!=null){
+          curNode=pHead.next;
+          if(pHead.random!=null){
+          curNode.random=pHead.random.next;}
+          pHead=pHead.next.next;
+      }
 
-            mylist.add(new RandomListNode(thisNode.label));
-            thisNode.random=pHead.random;
-            thisNode.next=pHead.next;
-            pHead=pHead.next;
-            thisNode=thisNode.next;
-
-
-
-        }
-
-     return mylist.get(0);
+      pHead=top;
+        RandomListNode mid=pHead;
+      curNode=pHead.next;
+      top=curNode;
+      while (curNode!=null){
+          pHead.next=pHead.next.next;
+          if(curNode.next!=null){
+          curNode.next=curNode.next.next;}
+          curNode=curNode.next;
+          pHead=pHead.next;
+      }
+      return top;
     }
 }
 
